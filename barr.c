@@ -105,6 +105,9 @@ int barr_set(barr_t *barr, size_t index)
         return ret;
     }
     BIT_SET((*barr)->chunks[CHUNK_OF_BIT(index)], BIT_OF_CHUNK(index));
+    if (index >= (*barr)->size) {
+        (*barr)->size = index + 1;
+    }
     return BARR_OK;
 }
 
