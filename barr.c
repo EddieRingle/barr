@@ -18,9 +18,9 @@
 #    define barr_free(ptr) free(ptr)
 #endif
 
-#define BIT_SET(i, n) (i |= 1 << (n))
-#define BIT_CLR(i, n) (i &= ~(1 << (n)))
-#define BIT_TGL(i, n) (i ^= 1 << (n))
+#define BIT_SET(i, n) (i |= (1 << (n)))
+#define BIT_CLR(i, n) (i &= (~(1 << (n))))
+#define BIT_TGL(i, n) (i ^= (1 << (n)))
 
 #define BIT_CHK(i, n) (i & (1 << (n)))
 
