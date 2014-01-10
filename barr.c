@@ -89,7 +89,7 @@ int barr_get(barr_t *barr, size_t index, barr_bit *bit)
     if (bit == NULL) {
         return BARR_INVALID_ARGS;
     }
-    if (index >= (*barr)->capacity) {
+    if (index >= (*barr)->size) {
         *bit = 0;
         return BARR_OK;
     }
