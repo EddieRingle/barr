@@ -25,7 +25,7 @@ int barr_init(barr_t *barr)
     if (barr == NULL) {
         return BARR_INVALID_ARGS;
     }
-    *barr = barr_malloc(sizeof(barr_t));
+    *barr = barr_malloc(sizeof(struct barr_t));
     if (*barr == NULL) {
         return BARR_MEMORY_ERROR;
     }
