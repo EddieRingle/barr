@@ -3,6 +3,7 @@
  * MIT-licensed. See LICENSE for details.
  */
 
+#include <stdint.h>
 #include <stdlib.h>
 #include <string.h>
 
