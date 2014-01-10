@@ -99,6 +99,7 @@ int barr_init(barr_t *barr)
     if ((*barr)->chunks == NULL) {
         return BARR_MEMORY_ERROR;
     }
+    memset((*barr)->chunks, 0, sizeof(uint64_t));
     (*barr)->capacity = BITS_PER_CHUNK;
     (*barr)->chunk_count = 1;
     (*barr)->size = 0;
