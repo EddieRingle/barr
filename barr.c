@@ -159,7 +159,7 @@ int barr_get(barr_t *barr, size_t index, barr_bit *bit)
         *bit = 0;
         return BARR_OK;
     }
-    *bit = (unsigned)BIT_CHK((*barr)->chunks[CHUNK_OF_BIT(index)], BIT_OF_CHUNK(index) + 1);
+    *bit = (unsigned)BIT_CHK((*barr)->chunks[CHUNK_OF_BIT(index)], BIT_OF_CHUNK(index));
     return BARR_OK;
 }
 
@@ -170,7 +170,7 @@ int barr_set(barr_t *barr, size_t index)
     if ((ret = barr_grow_to_index(barr, index)) != BARR_OK) {
         return ret;
     }
-    BIT_SET((*barr)->chunks[CHUNK_OF_BIT(index)], BIT_OF_CHUNK(index) + 1);
+    BIT_SET((*barr)->chunks[CHUNK_OF_BIT(index)], BIT_OF_CHUNK(index));
     return BARR_OK;
 }
 
@@ -180,7 +180,7 @@ int barr_clear(barr_t *barr, size_t index)
     if (index >= (*barr)->capacity) {
         return barr_grow_to_index(barr, index);
     }
-    BIT_CLR((*barr)->chunks[CHUNK_OF_BIT(index)], BIT_OF_CHUNK(index) + 1);
+    BIT_CLR((*barr)->chunks[CHUNK_OF_BIT(index)], BIT_OF_CHUNK(index));
     return BARR_OK;
 }
 
@@ -191,6 +191,6 @@ int barr_toggle(barr_t *barr, size_t index)
     if ((ret = barr_grow_to_index(barr, index)) != BARR_OK) {
         return ret;
     }
-    BIT_TGL((*barr)->chunks[CHUNK_OF_BIT(index)], BIT_OF_CHUNK(index) + 1);
+    BIT_TGL((*barr)->chunks[CHUNK_OF_BIT(index)], BIT_OF_CHUNK(index));
     return BARR_OK;
 }
